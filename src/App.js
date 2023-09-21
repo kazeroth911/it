@@ -13,23 +13,23 @@ const sportingGoods = [
 ]
 
 function App() {
-  const[txtValue, setTxtValue] = useState('Hey')
+  const[txtValue, setTxtValue] = useState('')
+  const[showOnlyStock, setShowOnlyStock] = useState(false)
 
   const handleClick = () => {
     alert('Clicked')
   }
   return (
     <div className="App">
-        {txtValue}
         <TextInput value= {txtValue} onChange={(e) => setTxtValue(e.target.value)}/>
-        <Checkbox/>
+        <Checkbox value= {showOnlyStock} onChange={(e) => setShowOnlyStock(e.target.checked)}/>
         <button>Submit</button>
 
         <table>
           <tbody>
             <Header></Header>
             <Category></Category>
-            <Items items={sportingGoods}/>
+            <Items items={sportingGoods} includePrice query={txtValue} showOnlyStock={showOnlyStock}/>
           </tbody>
         </table>
     </div>
