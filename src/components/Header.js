@@ -8,6 +8,7 @@ function Header(props) {
     }}>
         <td>Name</td>
         <td>Price</td>
+        <td style={{paddingLeft:'20px'}} >Stock</td>
     </tr>
   )
 }
